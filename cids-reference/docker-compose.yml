@@ -4,7 +4,7 @@ cids-reference-cids-integration-base:
     - "5434:5432"
   volumes:
     - cids-reference-cids-integration-base:/data
-    - /w/git_work/docker-volumes/cids-reference/cids-integration-base/import/:/import/cids-integration-base/
+    - ~/docker-volumes/cids-reference/cids-integration-base/import/:/import/cids-integration-base/
 cids-reference-cids-server:
   image: cismet/cids-server
   links:
@@ -15,7 +15,7 @@ cids-reference-cids-server:
     CIDS_ACCOUNT_EXTENSION: CidsReference
   volumes:
     - cids-reference-cids-server:/data
-    - /w/git_work/docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
+    - ~/docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
 cids-reference-cids-server-rest-legacy:
   image: cismet/cids-server-rest-legacy
   links:
@@ -27,4 +27,4 @@ cids-reference-cids-server-rest-legacy:
   volumes_from:
     - cids-reference-cids-server
   volumes:
-    - /w/git_work/docker-volumes/cids-reference/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
+    - ~/docker-volumes/cids-reference/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
