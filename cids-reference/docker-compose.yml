@@ -1,18 +1,30 @@
-cids-integration-base:
+cids-reference-cids-integration-base:
   image: cismet/cids-integration-base
   ports:
     - "5434:5432"
   volumes:
-    - /w/git_work/docker-volumes/cids-reference/cids-integration-base/import/cids_reference.sql:/import/cids-integration-base/cids_reference.sql
-cids-server:
+    - cids-reference-cids-integration-base:/data
+    - /w/git_work/docker-volumes/cids-reference/cids-integration-base/import/:/import/cids-integration-base/
+cids-reference-cids-server:
   image: cismet/cids-server
   links:
-    - "cids-integration-base:cids-integration-base"
+    - "cids-reference-cids-integration-base:cids-integration-base"
   ports:
     - "9986:9986"
   environment:
     CIDS_ACCOUNT_EXTENSION: CidsReference
   volumes:
-    - /w/git_work/docker-volumes/cids-reference/cids-server/import/settings.xml:/import/cids-server/settings.xml
-    - /w/git_work/docker-volumes/cids-reference/cids-server/import/pom.xml:/import/cids-server/pom.xml
-    - /w/git_work/docker-volumes/cids-reference/cids-server/import/runtime.properties:/import/cids-server/runtime.properties.xml
+    - cids-reference-cids-server:/data
+    - /w/git_work/docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
+cids-reference-cids-server-rest-legacy:
+  image: cismet/cids-server-rest-legacy
+  links:
+    - "cids-reference-cids-server:cids-server"
+  ports:
+    - "8890:8890"
+  environment:
+    CIDS_ACCOUNT_EXTENSION: CidsReference
+  volumes_from:
+    - cids-reference-cids-server
+  volumes:
+    - /w/git_work/docker-volumes/cids-reference/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
