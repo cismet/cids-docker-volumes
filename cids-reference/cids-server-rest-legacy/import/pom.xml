@@ -8,12 +8,12 @@
         <version>2.0</version>
     </parent>
 
-    <groupId>de.cismet.cids.custom.switchon</groupId>
-    <artifactId>switchon-legacy-rest-dist</artifactId>
+    <groupId>de.cismet.cids</groupId>
+    <artifactId>cids-reference-cids-server-rest-legacy</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>cids Custom Switch-On Legacy Rest Distribution</name>
+    <name>Cids Reference Legacy Rest Distribution</name>
     <description>Generates a Legacy Rest distribution</description>
 
     <dependencies>
@@ -29,7 +29,7 @@
             <plugin>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-maven-plugin</artifactId>
-                <version>2.0</version>
+                <version>2.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -37,25 +37,18 @@
                         </goals>
                     </execution>
                 </executions>
-		 						<configuration>
+		<configuration>
                     <vendor>cismet</vendor>
                     <homepage>http://www.cismet.de</homepage>
-                    <codebase>http://tl-ap001.xtr.deltares.nl/switchonDist</codebase>
-                    <m2codebase>lib/m2</m2codebase>
-                    <accountExtension>Switchon</accountExtension>
-                    <outputDirectory>..</outputDirectory>
+                    <codebase>http://</codebase>
+                    <m2codebase>/data/lib/m2</m2codebase>
+                    <accountExtension>CidsReference</accountExtension>
+                    <outputDirectory>/data/</outputDirectory>
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>de.cismet.cids</groupId>
                             <artifactId>cids-server-rest-legacy</artifactId>
                             <generateJnlp>false</generateJnlp>
-                            <additionalDependencies>
-                                <dependency>
-                                    <groupId>de.cismet.cids.custom.switchon</groupId>
-                                    <artifactId>cids-custom-switchon-server</artifactId>
-                                    <version>2.0-SNAPSHOT</version>
-                                </dependency>
-                            </additionalDependencies>
                             <starterConfiguration>
                                 <mainClass>de.cismet.cidsx.server.Starter</mainClass>
                             </starterConfiguration>
