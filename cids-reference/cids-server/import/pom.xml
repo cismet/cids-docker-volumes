@@ -43,7 +43,7 @@
                     <codebase>http://</codebase>
                     <m2codebase>/data/lib/m2</m2codebase>
                     <accountExtension>CidsReference</accountExtension>
-                    <outputDirectory>/data/lib</outputDirectory>
+                    <outputDirectory>/data/</outputDirectory>
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>de.cismet.cids</groupId>
