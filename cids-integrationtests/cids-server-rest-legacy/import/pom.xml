@@ -9,11 +9,11 @@
     </parent>
 
     <groupId>de.cismet.cids</groupId>
-    <artifactId>cids-reference-cids-server-rest-legacy</artifactId>
+    <artifactId>cids-integrationtests-cids-server-rest-legacy</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Cids Reference Legacy Rest Distribution</name>
+    <name>Cids Reference Legacy Rest Distribution for Integration Tests</name>
     <description>Generates a Legacy Rest distribution</description>
 
     <dependencies>
@@ -42,7 +42,7 @@
                     <homepage>http://www.cismet.de</homepage>
                     <codebase>http://</codebase>
                     <m2codebase>/data/lib/m2</m2codebase>
-                    <accountExtension>CidsReference</accountExtension>
+                    <accountExtension>CidsIntegrationtests</accountExtension>
                     <outputDirectory>/data/</outputDirectory>
                     <dependencyConfiguration>
                         <dependencyEx>

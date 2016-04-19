@@ -1,30 +1,29 @@
-cids-reference-cids-integration-base:
+cids_integrationtests_integrationbase:
   image: cismet/cids-integration-base
-  ports:
-    - "5434:5432"
   volumes:
-    - cids-reference-cids-integration-base:/data
-    - ~/docker-volumes/cids-reference/cids-integration-base/import/:/import/cids-integration-base/
-cids-reference-cids-server:
+    - cids_integrationtests_integrationbase:/data
+    - /home/pdihe/docker-volumes/cids-integrationtests/cids-integration-base/import/:/import/cids-integration-base/
+  log_driver: "json-file"    
+cids_integrationtests_server:
   image: cismet/cids-server
   links:
-    - "cids-reference-cids-integration-base:cids-integration-base"
-  ports:
-    - "9986:9986"
+    - "cids_integrationtests_integrationbase:cids-integration-base"
   environment:
-    CIDS_ACCOUNT_EXTENSION: CidsReference
+    LOG4J_HOST: 127.0.0.1
+    CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
   volumes:
     - cids-reference-cids-server:/data
-    - ~/docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
-cids-reference-cids-server-rest-legacy:
+    - /home/pdihe/docker-volumes/cids-integrationtests/cids-server/import/:/import/cids-server/
+  log_driver: "json-file"    
+cids_integrationtests_server_rest:
   image: cismet/cids-server-rest-legacy
   links:
-    - "cids-reference-cids-server:cids-server"
-  ports:
-    - "8890:8890"
+    - "cids_integrationtests_server:cids-server"
   environment:
-    CIDS_ACCOUNT_EXTENSION: CidsReference
+    LOG4J_HOST: 127.0.0.1
+    CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
   volumes_from:
-    - cids-reference-cids-server
+    - cids_integrationtests_server
   volumes:
-    - ~/docker-volumes/cids-reference/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
+    - /home/pdihe/docker-volumes/cids-integrationtests/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
+  log_driver: "json-file"
