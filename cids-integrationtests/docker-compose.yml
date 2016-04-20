@@ -12,7 +12,7 @@ cids_integrationtests_server:
     LOG4J_HOST: 127.0.0.1
     CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
   volumes:
-    - cids-reference-cids-server:/data
+    - cids_integrationtests_server:/data
     - /home/pdihe/docker-volumes/cids-integrationtests/cids-server/import/:/import/cids-server/
   log_driver: "json-file"    
 cids_integrationtests_server_rest:
