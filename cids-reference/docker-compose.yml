@@ -12,6 +12,7 @@ cids-reference-cids-server:
   ports:
     - "9986:9986"
   environment:
+    LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsReference
   volumes:
     - cids-reference-cids-server:/data
@@ -23,6 +24,7 @@ cids-reference-cids-server-rest-legacy:
   ports:
     - "8890:8890"
   environment:
+    LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsReference
   volumes_from:
     - cids-reference-cids-server

@@ -9,7 +9,7 @@ cids_integrationtests_server:
   links:
     - "cids_integrationtests_integrationbase:cids-integration-base"
   environment:
-    LOG4J_HOST: 127.0.0.1
+    LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
   volumes:
     - cids_integrationtests_server:/data
@@ -20,7 +20,7 @@ cids_integrationtests_server_rest:
   links:
     - "cids_integrationtests_server:cids-server"
   environment:
-    LOG4J_HOST: 127.0.0.1
+    LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
   volumes_from:
     - cids_integrationtests_server
