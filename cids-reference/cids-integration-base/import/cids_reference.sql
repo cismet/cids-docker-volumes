@@ -12094,7 +12094,7 @@ INSERT INTO cs_ug_class_perm VALUES (2, 1, 8, 1, NULL);
 INSERT INTO cs_ug_class_perm VALUES (3, 1, 5, 1, NULL);
 INSERT INTO cs_ug_class_perm VALUES (4, 1, 7, 1, NULL);
 INSERT INTO cs_ug_class_perm VALUES (5, 1, 6, 1, NULL);
-INSERT INTO cs_ug_class_perm VALUES (6, 1, 4, 0, NULL);
+INSERT INTO cs_ug_class_perm VALUES (6, 1, 4, 1, NULL);
 INSERT INTO cs_ug_class_perm VALUES (7, 1, 2, 1, NULL);
 INSERT INTO cs_ug_class_perm VALUES (8, 1, 3, 1, NULL);
 
@@ -15990,11 +15990,11 @@ INSERT INTO sph_spielhalle VALUES ('qQYSFhBtnfEv', 'Magic Spielhalle', 1, 1, 1, 
 INSERT INTO sph_spielhalle VALUES ('mZkQnrCTpJHB', 'Spiel-in Meyer', 1, 3, 2, false, '2018-03-24', 23, '2016-03-24 15:09:03.991593', 2, 45, 2);
 INSERT INTO sph_spielhalle VALUES ('vgakjnhXCMoD', 'Glücks-Karl', 2, 2, 2, true, '2019-03-24', 24, '2016-03-24 15:09:03.992102', 3, 10, 3);
 INSERT INTO sph_spielhalle VALUES ('wXcrPWpFZKei', 'Spielpalast', 3, 3, 2, NULL, '2016-03-24', 25, '2016-03-24 15:09:03.992411', 4, 12, 4);
-INSERT INTO sph_spielhalle VALUES ('cNKZxLpIMXTr', 'Happy Winner Nowotny', 44, 2, 1, NULL, '2026-03-24', 26, '2016-03-24 15:09:03.992788', 5, 2, 5);
+INSERT INTO sph_spielhalle VALUES ('cNKZxLpIMXTr', 'Happy Winner Nowotny', 3, 2, 1, NULL, '2026-03-24', 26, '2016-03-24 15:09:03.992788', 5, 2, 5);
 INSERT INTO sph_spielhalle VALUES ('LbYWmfzEdQHP', 'Joker House', 5, NULL, 1, NULL, '2015-03-24', 27, '2016-03-24 15:09:03.993098', 6, 23, 6);
 INSERT INTO sph_spielhalle VALUES (NULL, 'Dark Room Lucky Punch', 6, 3, 1, true, '2012-03-24', 28, '2016-03-24 15:09:03.993409', 7, 54, 7);
 INSERT INTO sph_spielhalle VALUES ('LbYWmfzEdQHP', 'Spielhalle Gewinner', 7, 1, 3, NULL, '2016-03-24', 29, '2016-03-24 15:09:03.993703', 8, 100, 8);
-INSERT INTO sph_spielhalle VALUES (NULL, 'Glückshalle', 8, 3, 3, true, '2016-03-24', 300, '2016-03-24 15:09:03.994004', 9, 5, 9);
+INSERT INTO sph_spielhalle VALUES (NULL, 'Glückshalle', 8, 3, 3, true, '2016-03-24', 30, '2016-03-24 15:09:03.994004', 9, 5, 9);
 
 
 --
@@ -16005,7 +16005,6 @@ INSERT INTO sph_spielhalle_kategorien VALUES (1, 1, 2);
 INSERT INTO sph_spielhalle_kategorien VALUES (2, 1, 3);
 INSERT INTO sph_spielhalle_kategorien VALUES (3, 2, 4);
 INSERT INTO sph_spielhalle_kategorien VALUES (4, 3, 5);
-INSERT INTO sph_spielhalle_kategorien VALUES (5, 44, 6);
 INSERT INTO sph_spielhalle_kategorien VALUES (6, 5, 7);
 INSERT INTO sph_spielhalle_kategorien VALUES (7, 6, 8);
 INSERT INTO sph_spielhalle_kategorien VALUES (8, 7, 9);
@@ -16017,7 +16016,6 @@ INSERT INTO sph_spielhalle_kategorien VALUES (1, 5, 14);
 INSERT INTO sph_spielhalle_kategorien VALUES (1, 7, 15);
 INSERT INTO sph_spielhalle_kategorien VALUES (2, 5, 16);
 INSERT INTO sph_spielhalle_kategorien VALUES (2, 8, 17);
-INSERT INTO sph_spielhalle_kategorien VALUES (3, NULL, 18);
 INSERT INTO sph_spielhalle_kategorien VALUES (4, 5, 19);
 INSERT INTO sph_spielhalle_kategorien VALUES (5, 4, 20);
 INSERT INTO sph_spielhalle_kategorien VALUES (8, 4, 21);
