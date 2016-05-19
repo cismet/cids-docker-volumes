@@ -336,40 +336,6 @@ SET row_security = off;
 SET search_path = public, pg_catalog;
 
 --
--- Data for Name: cs_config_attr_key; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO cs_config_attr_key VALUES (1, 'csa://bandwidthTest', 'default');
-INSERT INTO cs_config_attr_key VALUES (2, 'csa://downloadFile', 'default');
-INSERT INTO cs_config_attr_key VALUES (3, 'csa://httpTunnelAction', 'default');
-INSERT INTO cs_config_attr_key VALUES (4, 'csa://passwordSwitcherAdminAction', 'default');
-INSERT INTO cs_config_attr_key VALUES (5, 'csa://testAction', 'default');
-INSERT INTO cs_config_attr_key VALUES (6, 'csa://webDavTunnelAction', 'default');
-
-
---
--- PostgreSQL database dump complete
---
-
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.0.3
--- Dumped by pg_dump version 9.5.2
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = off;
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET escape_string_warning = off;
-SET row_security = off;
-
-SET search_path = public, pg_catalog;
-
---
 -- Data for Name: cs_all_attr_mapping; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -422,28 +388,10 @@ INSERT INTO cs_attr VALUES (33, 8, 23, 'spielhallen', 'spielhallen', true, false
 
 
 --
--- Data for Name: cs_attr_object; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- Data for Name: cs_attr_object_derived; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
 -- Name: cs_attr_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('cs_attr_sequence', 33, true);
-
-
---
--- Data for Name: cs_attr_string; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
 
 
 --
@@ -520,22 +468,22 @@ SELECT pg_catalog.setval('cs_config_attr_exempt_sequence', 1, false);
 
 
 --
--- Data for Name: cs_config_attr_jt; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO cs_config_attr_jt VALUES (1, NULL, 1, 1, 1, 1, 2);
-INSERT INTO cs_config_attr_jt VALUES (2, NULL, 1, 1, 2, 1, 2);
-INSERT INTO cs_config_attr_jt VALUES (3, NULL, 1, 1, 3, 1, 2);
-INSERT INTO cs_config_attr_jt VALUES (4, NULL, 1, 1, 4, 1, 2);
-INSERT INTO cs_config_attr_jt VALUES (5, NULL, 1, 1, 5, 1, 2);
-INSERT INTO cs_config_attr_jt VALUES (6, NULL, 1, 1, 6, 1, 2);
-
-
---
 -- Name: cs_config_attr_jt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('cs_config_attr_jt_sequence', 1, false);
+
+
+--
+-- Data for Name: cs_config_attr_key; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO cs_config_attr_key VALUES (1, 'csa://bandwidthTest', 'default');
+INSERT INTO cs_config_attr_key VALUES (2, 'csa://downloadFile', 'default');
+INSERT INTO cs_config_attr_key VALUES (3, 'csa://httpTunnelAction', 'default');
+INSERT INTO cs_config_attr_key VALUES (4, 'csa://passwordSwitcherAdminAction', 'default');
+INSERT INTO cs_config_attr_key VALUES (5, 'csa://testAction', 'default');
+INSERT INTO cs_config_attr_key VALUES (6, 'csa://webDavTunnelAction', 'default');
 
 
 --
@@ -627,7 +575,7 @@ SELECT pg_catalog.setval('cs_java_class_sequence', 1, false);
 -- Name: cs_locks_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('cs_locks_seq', 2, true);
+SELECT pg_catalog.setval('cs_locks_seq', 3, true);
 
 
 --
@@ -941,8 +889,8 @@ SELECT pg_catalog.setval('cs_ug_sequence', 2, true);
 -- Data for Name: cs_usr; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO cs_usr VALUES (1, 'admin', '*****', '2016-03-24 10:58:45.391675', true, '9a64e84ab2813b8e4c5ffb324ef26230                                ', '7brg5tbj6HbebPAZ', NULL, NULL);
-INSERT INTO cs_usr VALUES (2, 'gast', '*****', '2016-03-24 10:58:45.393509', false, '04ff7188b378698b663a3566e2565662                                ', '3HgMi39UwpzFdNUa', NULL, NULL);
+INSERT INTO cs_usr VALUES (1, 'admin', '*****', '2016-05-19 06:15:45.245598', true, '399b1ea21ae2cf8b7a92a29d16312c8a                                ', 'bPRN5moRVptQWWzl', NULL, NULL);
+INSERT INTO cs_usr VALUES (2, 'gast', '*****', '2016-05-19 06:15:45.270664', false, '772b95b3830eb2e5769b4a38dbcdfb59                                ', 'YHla1c1TPGDq0ib2', NULL, NULL);
 
 
 --
@@ -972,6 +920,39 @@ INSERT INTO geom VALUES (31, '0101000020E8640000FB69DEE44FB2164175E65E9C37AD5541
 -- PostgreSQL database dump complete
 --
 
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.0.3
+-- Dumped by pg_dump version 9.5.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+SET row_security = off;
+
+SET search_path = public, pg_catalog;
+
+--
+-- Data for Name: cs_config_attr_jt; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO cs_config_attr_jt VALUES (1, NULL, 1, 1, 1, 1, 2);
+INSERT INTO cs_config_attr_jt VALUES (2, NULL, 1, 1, 2, 1, 2);
+INSERT INTO cs_config_attr_jt VALUES (3, NULL, 1, 1, 3, 1, 2);
+INSERT INTO cs_config_attr_jt VALUES (4, NULL, 1, 1, 4, 1, 2);
+INSERT INTO cs_config_attr_jt VALUES (5, NULL, 1, 1, 5, 1, 2);
+INSERT INTO cs_config_attr_jt VALUES (6, NULL, 1, 1, 6, 1, 2);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
 SELECT recreate_cache();
 SELECT reindex();
-SELECT recreate_cache();
