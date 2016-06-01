@@ -207,47 +207,52 @@ SELECT pg_catalog.setval('sph_kategorie_seq', 10, true);
 -- Data for Name: sph_spielhalle; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO sph_spielhalle VALUES ('iFhSveOnalTR', 'Spielhalle Leichtes Geld', NULL, 1, NULL, NULL, '2016-03-24', NULL, '2016-03-24 15:09:03.994305', 10, NULL, 10);
-INSERT INTO sph_spielhalle VALUES ('qQYSFhBtnfEv', 'Magic Spielhalle', 1, 1, 1, true, '2017-03-24', 22, '2016-03-24 15:09:03.989801', 1, 56, 1);
-INSERT INTO sph_spielhalle VALUES ('mZkQnrCTpJHB', 'Spiel-in Meyer', 1, 3, 2, false, '2018-03-24', 23, '2016-03-24 15:09:03.991593', 2, 45, 2);
-INSERT INTO sph_spielhalle VALUES ('vgakjnhXCMoD', 'Glücks-Karl', 2, 2, 2, true, '2019-03-24', 24, '2016-03-24 15:09:03.992102', 3, 10, 3);
-INSERT INTO sph_spielhalle VALUES ('wXcrPWpFZKei', 'Spielpalast', 3, 3, 2, NULL, '2016-03-24', 25, '2016-03-24 15:09:03.992411', 4, 12, 4);
-INSERT INTO sph_spielhalle VALUES ('cNKZxLpIMXTr', 'Happy Winner Nowotny', 3, 2, 1, NULL, '2026-03-24', 26, '2016-03-24 15:09:03.992788', 5, 2, 5);
-INSERT INTO sph_spielhalle VALUES ('LbYWmfzEdQHP', 'Joker House', 5, NULL, 1, NULL, '2015-03-24', 27, '2016-03-24 15:09:03.993098', 6, 23, 6);
-INSERT INTO sph_spielhalle VALUES (NULL, 'Dark Room Lucky Punch', 6, 3, 1, true, '2012-03-24', 28, '2016-03-24 15:09:03.993409', 7, 54, 7);
-INSERT INTO sph_spielhalle VALUES ('LbYWmfzEdQHP', 'Spielhalle Gewinner', 7, 1, 3, NULL, '2016-03-24', 29, '2016-03-24 15:09:03.993703', 8, 100, 8);
-INSERT INTO sph_spielhalle VALUES (NULL, 'Glückshalle', 8, 3, 3, true, '2016-03-24', 30, '2016-03-24 15:09:03.994004', 9, 5, 9);
+INSERT INTO sph_spielhalle VALUES ('qQYSFhBtnfEv', 'Magic Spielhalle', 1, 1, 1, true, '2017-03-24', 1, '2016-03-24 15:09:03.989801', 1, 56, 1);
+INSERT INTO sph_spielhalle VALUES ('mZkQnrCTpJHB', 'Spiel-in Meyer', 1, 3, 2, false, '2018-03-24', 2, '2016-03-24 15:09:03.991593', 2, 45, 2);
+INSERT INTO sph_spielhalle VALUES ('vgakjnhXCMoD', 'Glücks-Karl', 2, 2, 2, true, '2019-03-24', 3, '2016-03-24 15:09:03.992102', 3, 10, 3);
+INSERT INTO sph_spielhalle VALUES ('wXcrPWpFZKei', 'Spielpalast', 3, 3, 2, false, '2016-03-24', 4 '2016-03-24 15:09:03.992411', 4, 12, 4);
+INSERT INTO sph_spielhalle VALUES ('cNKZxLpIMXTr', 'Happy Winner Nowotny', 3, 2, 1, false, '2026-03-24', 5, '2016-03-24 15:09:03.992788', 5, 2, 5);
+INSERT INTO sph_spielhalle VALUES ('LbYWmfzEdQHP', 'Joker House', 5, 1, 1, false, '2015-03-24', 6, '2016-03-24 15:09:03.993098', 6, 23, 6);
+INSERT INTO sph_spielhalle VALUES (NULL, 'Dark Room Lucky Punch', 6, 3, 1, true, '2012-03-24', 7, '2016-03-24 15:09:03.993409', 7, 54, 7);
+INSERT INTO sph_spielhalle VALUES ('LbYWmfzEdQHP', 'Spielhalle Gewinner', 7, 1, 3, false, '2016-03-24', 8, '2016-03-24 15:09:03.993703', 8, 100, 8);
+INSERT INTO sph_spielhalle VALUES (NULL, 'Glückshalle', 8, 3, 3, true, '2016-03-24', 9, '2016-03-24 15:09:03.994004', 9, 5, 9);
+INSERT INTO sph_spielhalle VALUES ('iFhSveOnalTR', 'Spielhalle Leichtes Geld', 9, 1, 3, false, '2016-03-24', 10, '2016-03-24 15:09:03.994305', 10, 123, 10);
 
 
 --
 -- Data for Name: sph_spielhalle_kategorien; Type: TABLE DATA; Schema: public; Owner: postgres
 --
-
-INSERT INTO sph_spielhalle_kategorien VALUES (1, 1, 2);
-INSERT INTO sph_spielhalle_kategorien VALUES (2, 1, 3);
-INSERT INTO sph_spielhalle_kategorien VALUES (3, 2, 4);
-INSERT INTO sph_spielhalle_kategorien VALUES (4, 3, 5);
-INSERT INTO sph_spielhalle_kategorien VALUES (6, 5, 7);
-INSERT INTO sph_spielhalle_kategorien VALUES (7, 6, 8);
-INSERT INTO sph_spielhalle_kategorien VALUES (8, 7, 9);
-INSERT INTO sph_spielhalle_kategorien VALUES (9, 8, 10);
-INSERT INTO sph_spielhalle_kategorien VALUES (1, 2, 11);
-INSERT INTO sph_spielhalle_kategorien VALUES (1, 3, 12);
-INSERT INTO sph_spielhalle_kategorien VALUES (1, 4, 13);
-INSERT INTO sph_spielhalle_kategorien VALUES (1, 5, 14);
-INSERT INTO sph_spielhalle_kategorien VALUES (1, 7, 15);
-INSERT INTO sph_spielhalle_kategorien VALUES (2, 5, 16);
-INSERT INTO sph_spielhalle_kategorien VALUES (2, 8, 17);
-INSERT INTO sph_spielhalle_kategorien VALUES (4, 5, 19);
-INSERT INTO sph_spielhalle_kategorien VALUES (5, 4, 20);
-INSERT INTO sph_spielhalle_kategorien VALUES (8, 4, 21);
-
-
+INSERT INTO sph_spielhalle_kategorien VALUES (1, 1, 1);
+INSERT INTO sph_spielhalle_kategorien VALUES (1, 2, 2);
+INSERT INTO sph_spielhalle_kategorien VALUES (1, 3, 3);
+INSERT INTO sph_spielhalle_kategorien VALUES (1, 4, 4);
+INSERT INTO sph_spielhalle_kategorien VALUES (1, 5, 5);
+INSERT INTO sph_spielhalle_kategorien VALUES (1, 7, 6);
+INSERT INTO sph_spielhalle_kategorien VALUES (1, 10, 7);
+INSERT INTO sph_spielhalle_kategorien VALUES (2, 1, 8);
+INSERT INTO sph_spielhalle_kategorien VALUES (2, 5, 9);
+INSERT INTO sph_spielhalle_kategorien VALUES (2, 8, 10);
+INSERT INTO sph_spielhalle_kategorien VALUES (3, 2, 11);
+INSERT INTO sph_spielhalle_kategorien VALUES (4, 3, 12);
+INSERT INTO sph_spielhalle_kategorien VALUES (4, 5, 13);
+INSERT INTO sph_spielhalle_kategorien VALUES (5, 3, 14);
+INSERT INTO sph_spielhalle_kategorien VALUES (5, 4, 15);
+INSERT INTO sph_spielhalle_kategorien VALUES (6, 5, 16);
+INSERT INTO sph_spielhalle_kategorien VALUES (7, 6, 17);
+INSERT INTO sph_spielhalle_kategorien VALUES (8, 4, 18);
+INSERT INTO sph_spielhalle_kategorien VALUES (8, 7, 19);
+INSERT INTO sph_spielhalle_kategorien VALUES (9, 8, 20);
+INSERT INTO sph_spielhalle_kategorien VALUES (10, 5, 21);
+INSERT INTO sph_spielhalle_kategorien VALUES (10, 6, 22);
+INSERT INTO sph_spielhalle_kategorien VALUES (10, 7, 23);
+INSERT INTO sph_spielhalle_kategorien VALUES (10, 8, 24);
+INSERT INTO sph_spielhalle_kategorien VALUES (10, 9, 25);
+INSERT INTO sph_spielhalle_kategorien VALUES (10, 10, 26);
 --
 -- Name: sph_spielhalle_kategorien_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('sph_spielhalle_kategorien_seq', 21, true);
+SELECT pg_catalog.setval('sph_spielhalle_kategorien_seq', 26, true);
 
 
 --
@@ -428,10 +433,10 @@ INSERT INTO cs_class VALUES (1, 'GEOM', 'Cids Geodatentyp', 1, 1, 'GEOM', 'ID', 
 INSERT INTO cs_class VALUES (2, 'URL', NULL, 2, 2, 'URL', 'ID', false, NULL, NULL, NULL, false, NULL, NULL);
 INSERT INTO cs_class VALUES (3, 'URL_BASE', NULL, 2, 2, 'URL_BASE', 'ID', false, NULL, NULL, NULL, false, NULL, NULL);
 INSERT INTO cs_class VALUES (4, 'SPH_TYP', 'Typ der Spielhalle', 2, 2, 'SPH_TYP', 'ID', false, NULL, NULL, NULL, false, NULL, NULL);
-INSERT INTO cs_class VALUES (5, 'SPH_KATEGORIE', '', 2, 2, 'SPH_KATEGORIE', 'ID', false, NULL, NULL, NULL, false, NULL, NULL);
-INSERT INTO cs_class VALUES (6, 'SPH_SPIELHALLE_KATEGORIEN', '', 2, 2, 'SPH_SPIELHALLE_KATEGORIEN', 'ID', false, NULL, NULL, NULL, true, NULL, NULL);
-INSERT INTO cs_class VALUES (7, 'SPH_SPIELHALLE', '', 2, 2, 'SPH_SPIELHALLE', 'ID', true, NULL, NULL, NULL, false, NULL, NULL);
-INSERT INTO cs_class VALUES (8, 'SPH_Betreiber', '', 2, 2, 'SPH_BETREIBER', 'ID', false, NULL, NULL, NULL, false, NULL, NULL);
+INSERT INTO cs_class VALUES (5, 'SPH_KATEGORIE', 'Kategorie der Spielhalle', 2, 2, 'SPH_KATEGORIE', 'ID', false, NULL, NULL, NULL, false, NULL, NULL);
+INSERT INTO cs_class VALUES (6, 'SPH_SPIELHALLE_KATEGORIEN', 'Kategorien der Spielhalle (Array)', 2, 2, 'SPH_SPIELHALLE_KATEGORIEN', 'ID', false, NULL, NULL, NULL, true, NULL, NULL);
+INSERT INTO cs_class VALUES (7, 'SPH_SPIELHALLE', 'Spielhallen Entity', 2, 2, 'SPH_SPIELHALLE', 'ID', true, NULL, NULL, NULL, false, NULL, NULL);
+INSERT INTO cs_class VALUES (8, 'SPH_Betreiber', 'Spielhallen Betreiber Entity', 2, 2, 'SPH_BETREIBER', 'ID', false, NULL, NULL, NULL, false, NULL, NULL);
 
 
 --
@@ -471,7 +476,7 @@ SELECT pg_catalog.setval('cs_config_attr_exempt_sequence', 1, false);
 -- Name: cs_config_attr_jt_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('cs_config_attr_jt_sequence', 1, false);
+SELECT pg_catalog.setval('cs_config_attr_jt_sequence', 7, false);
 
 
 --
@@ -847,7 +852,7 @@ INSERT INTO cs_ug_class_perm VALUES (8, 1, 3, 1, NULL);
 -- Name: cs_ug_class_perm_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('cs_ug_class_perm_sequence', 1, false);
+SELECT pg_catalog.setval('cs_ug_class_perm_sequence', 8, false);
 
 
 --
@@ -904,16 +909,16 @@ SELECT pg_catalog.setval('cs_usr_sequence', 2, true);
 -- Data for Name: geom; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO geom VALUES (22, '0101000020E86400005D9C1C3785AA16415BFBCEBAB0AB5541');
-INSERT INTO geom VALUES (23, '0101000020E8640000712A29FCEBE9164143115C83BEAC5541');
-INSERT INTO geom VALUES (24, '0101000020E8640000A0E0FA9F2ED71641A0F0A34D91A75541');
-INSERT INTO geom VALUES (25, '0101000020E8640000DA08D83DF6D71641FE3DDD1184A75541');
-INSERT INTO geom VALUES (26, '0101000020E8640000B6E1F423BD9B16411711C11D12AA5541');
-INSERT INTO geom VALUES (27, '0101000020E86400004BD0DB6B859B16416417545FD9A95541');
-INSERT INTO geom VALUES (28, '0101000020E8640000058D0B5E9FD4164129C18F807DAC5541');
-INSERT INTO geom VALUES (29, '0101000020E8640000D0EE9531CDA016417C9775FBD6AB5541');
-INSERT INTO geom VALUES (30, '0101000020E8640000334CECB228B216413A93789F36AD5541');
-INSERT INTO geom VALUES (31, '0101000020E8640000FB69DEE44FB2164175E65E9C37AD5541');
+INSERT INTO geom VALUES (1, '0101000020E86400005D9C1C3785AA16415BFBCEBAB0AB5541');
+INSERT INTO geom VALUES (2, '0101000020E8640000712A29FCEBE9164143115C83BEAC5541');
+INSERT INTO geom VALUES (3, '0101000020E8640000A0E0FA9F2ED71641A0F0A34D91A75541');
+INSERT INTO geom VALUES (4, '0101000020E8640000DA08D83DF6D71641FE3DDD1184A75541');
+INSERT INTO geom VALUES (5, '0101000020E8640000B6E1F423BD9B16411711C11D12AA5541');
+INSERT INTO geom VALUES (6, '0101000020E86400004BD0DB6B859B16416417545FD9A95541');
+INSERT INTO geom VALUES (7, '0101000020E8640000058D0B5E9FD4164129C18F807DAC5541');
+INSERT INTO geom VALUES (8, '0101000020E8640000D0EE9531CDA016417C9775FBD6AB5541');
+INSERT INTO geom VALUES (9, '0101000020E8640000334CECB228B216413A93789F36AD5541');
+INSERT INTO geom VALUES (10, '0101000020E8640000FB69DEE44FB2164175E65E9C37AD5541');
 
 
 --
