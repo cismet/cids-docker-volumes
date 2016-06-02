@@ -922,6 +922,12 @@ INSERT INTO geom VALUES (10, '0101000020E8640000FB69DEE44FB2164175E65E9C37AD5541
 
 
 --
+-- Name: geom_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('geom_seq', 10, true);
+
+--
 -- PostgreSQL database dump complete
 --
 
