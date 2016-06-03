@@ -41,9 +41,9 @@
                     <vendor>cismet</vendor>
                     <homepage>http://www.cismet.de</homepage>
                     <codebase>http://</codebase>
-                    <m2codebase>/data/lib/m2</m2codebase>
-                    <accountExtension>CidsIntegrationtests</accountExtension>
-                    <outputDirectory>/data/</outputDirectory>
+                    <m2codebase>__MAVEN_LIB_DIR__</m2codebase>
+                    <accountExtension>__CIDS_ACCOUNT_EXTENSION__</accountExtension>
+                    <outputDirectory>__DATA_DIR__</outputDirectory>
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>de.cismet.cids</groupId>

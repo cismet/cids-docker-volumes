@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <settings>
-    <localRepository>/data/lib/m2</localRepository>
+    <localRepository>__MAVEN_LIB_DIR__</localRepository>
     <profiles>
         <profile>
             <id>global-properties</id>

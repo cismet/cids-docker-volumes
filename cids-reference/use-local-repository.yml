@@ -14,10 +14,11 @@ cids-reference-cids-server:
   environment:
     LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsReference
-    UPDATE_SNAPSHOTS
+    MAVEN_LIB_DIR: /data/lib/m2-from-host/
+    UPDATE_SNAPSHOTS: -nsu -o
   volumes:
     - cids-reference-cids-server:/data/
-    - ~/.m2/repository:/data/lib/m2/:ro
+    - ~/.m2/repository/:/data/lib/m2-from-host:ro
     - ~/docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
 cids-reference-cids-server-rest-legacy:
   image: cismet/cids-server-rest-legacy
@@ -28,7 +29,8 @@ cids-reference-cids-server-rest-legacy:
   environment:
     LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsReference
-    UPDATE_SNAPSHOTS
+    MAVEN_LIB_DIR: /data/lib/m2-from-host/
+    UPDATE_SNAPSHOTS: -nsu -o
   volumes_from:
     - cids-reference-cids-server
   volumes:
