@@ -1,0 +1,34 @@
+cids_integrationtests_integrationbase:
+  image: cismet/cids-integration-base
+  volumes:
+    - cids_integrationtests_integrationbase:/data
+    - /home/pdihe/docker-volumes/cids-integrationtests/cids-integration-base/import/:/import/cids-integration-base/
+  log_driver: "json-file"    
+cids_integrationtests_server:
+  image: cismet/cids-server
+  links:
+    - "cids_integrationtests_integrationbase:cids-integration-base"
+  environment:
+    LOG4J_HOST: 172.17.0.1
+    CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
+    MAVEN_LIB_DIR: /data/lib/m2-from-host/
+    UPDATE_SNAPSHOTS: -nsu -o
+  volumes:
+    - cids_integrationtests_server:/data
+    - /home/pdihe/.m2/repository/:/data/lib/m2-from-host:ro
+    - /home/pdihe/docker-volumes/cids-integrationtests/cids-server/import/:/import/cids-server/
+  log_driver: "json-file"    
+cids_integrationtests_server_rest:
+  image: cismet/cids-server-rest-legacy
+  links:
+    - "cids_integrationtests_server:cids-server"
+  environment:
+    LOG4J_HOST: 172.17.0.1
+    CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
+    MAVEN_LIB_DIR: /data/lib/m2-from-host/
+    UPDATE_SNAPSHOTS: -nsu -o
+  volumes_from:
+    - cids_integrationtests_server
+  volumes:
+    - /home/pdihe/docker-volumes/cids-integrationtests/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
+  log_driver: "json-file"
