@@ -1,5 +1,5 @@
 cids_integrationtests_integrationbase:
-  image: cismet/cids-integration-base:postgres-9.0.3
+  image: cismet/cids-integration-base:postgres-9.6.1
   volumes:
     - cids_integrationtests_integrationbase:/data
     - /home/pdihe/docker-volumes/cids-integrationtests/cids-integration-base/import/:/import/cids-integration-base/
