@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>de.cismet.cids</groupId>
-    <artifactId>cids-reference-cids-server</artifactId>
+    <artifactId>cidsreference-cids-server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker start cids-reference-cids-server-rest-legacy
+docker start cidsreference_cids-server-rest-legacy

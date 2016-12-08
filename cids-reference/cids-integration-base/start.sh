@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker start cids-reference-cids-integration-base
+docker start cidsreference_cids-integration-base

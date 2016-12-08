@@ -964,6 +964,3 @@ INSERT INTO cs_config_attr_jt VALUES (6, NULL, 1, 1, 6, 1, 2);
 --
 -- PostgreSQL database dump complete
 --
-
-SELECT recreate_cache();
-SELECT reindex();

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker start cids-reference-cids-server
+docker start cidsreference_cids-server

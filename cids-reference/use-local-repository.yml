@@ -1,37 +1,49 @@
-cids-reference-cids-integration-base:
-  image: cismet/cids-integration-base:postgres-9.6.1
-  ports:
-    - "5434:5432"
-  volumes:
-    - cids-reference-cids-integration-base:/data
-    - ~/docker-volumes/cids-reference/cids-integration-base/import/:/import/cids-integration-base/
-cids-reference-cids-server:
-  image: cismet/cids-server
-  links:
-    - "cids-reference-cids-integration-base:cids-integration-base"
-  ports:
-    - "9986:9986"
-  environment:
-    LOG4J_HOST: 172.17.0.1
-    CIDS_ACCOUNT_EXTENSION: CidsReference
-    MAVEN_LIB_DIR: /data/lib/m2-from-host/
-    UPDATE_SNAPSHOTS: -nsu -o
-  volumes:
-    - cids-reference-cids-server:/data/
-    - ~/.m2/repository/:/data/lib/m2-from-host:ro
-    - ~/docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
-cids-reference-cids-server-rest-legacy:
-  image: cismet/cids-server-rest-legacy
-  links:
-    - "cids-reference-cids-server:cids-server"
-  ports:
-    - "8890:8890"
-  environment:
-    LOG4J_HOST: 172.17.0.1
-    CIDS_ACCOUNT_EXTENSION: CidsReference
-    MAVEN_LIB_DIR: /data/lib/m2-from-host/
-    UPDATE_SNAPSHOTS: -nsu -o
-  volumes_from:
-    - cids-reference-cids-server
-  volumes:
-    - ~/docker-volumes/cids-reference/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
+version: '2'
+services:
+    cids-integration-base:
+      image: cismet/cids-integration-base:postgres-9.6.1-2.
+      container_name: cidsreferencelocal_cids-integration-base
+      ports:
+        - "5434:5432"
+      volumes:
+        - cids-integration-base:/data
+        - ~/cids-docker-volumes/cids-reference/cids-integration-base/import/:/import/cidsIntegrationBase/
+    cids-server:
+      image: cismet/cids-server
+      container_name: cidsreferencelocal_cids-server
+      links:
+        - "cidsreferencelocal_cids-integration-base:cids-integration-base"
+      ports:
+        - "9986:9986"
+      environment:
+        LOG4J_HOST: 172.17.0.1
+        CIDS_ACCOUNT_EXTENSION: CidsReference
+        MAVEN_LIB_DIR: /data/lib/m2-from-host/
+        UPDATE_SNAPSHOTS: -nsu -o
+      volumes:
+        - cids-server:/data/
+        - ~/.m2/repository/:/data/lib/m2-from-host:ro
+        - ~/cids-docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
+    cids-server-rest-legacy:
+      image: cismet/cids-server-rest-legacy
+      container_name: cidsreferencelocal_cids-server-rest-legacy
+      links:
+        - "cids-server:cids-server"
+      ports:
+        - "8890:8890"
+      environment:
+        LOG4J_HOST: 172.17.0.1
+        CIDS_ACCOUNT_EXTENSION: CidsReference
+        MAVEN_LIB_DIR: /data/lib/m2-from-host/
+        UPDATE_SNAPSHOTS: -nsu -o
+      volumes_from:
+        - cids-server
+      volumes:
+        - ~/cids-docker-volumes/cids-reference/cids-server-rest-legacy/import/:/import/cids-server-rest-legacy/
+volumes:
+  cids-integration-base:
+    driver: local
+  cids-server:
+    driver: local
+  cids-server-rest-legacy:
+    driver: local
