@@ -6,7 +6,7 @@ services:
       ports:
         - "5434:5432"
       volumes:
-        - cids-integration-base:/data
+        - cids-integration-base:/cidsIntegrationBase/pg_data
         - ~/cids-docker-volumes/cids-reference/cids-integration-base/import/:/import/cidsIntegrationBase/
     cids-server:
       image: cismet/cids-server
@@ -18,11 +18,11 @@ services:
       environment:
         LOG4J_HOST: 172.17.0.1
         CIDS_ACCOUNT_EXTENSION: CidsReference
-        MAVEN_LIB_DIR: /data/lib/m2-from-host/
+        MAVEN_LIB_DIR: /cidsDistribution/lib/m2-from-host/
         UPDATE_SNAPSHOTS: -nsu -o
       volumes:
-        - cids-server:/data/
-        - ~/.m2/repository/:/data/lib/m2-from-host:ro
+        - cids-server:/cidsDistribution/
+        - ~/.m2/repository/:/cidsDistribution/lib/m2-from-host:ro
         - ~/cids-docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
     cids-server-rest-legacy:
       image: cismet/cids-server-rest-legacy
@@ -34,7 +34,7 @@ services:
       environment:
         LOG4J_HOST: 172.17.0.1
         CIDS_ACCOUNT_EXTENSION: CidsReference
-        MAVEN_LIB_DIR: /data/lib/m2-from-host/
+        MAVEN_LIB_DIR: /cidsDistribution/lib/m2-from-host/
         UPDATE_SNAPSHOTS: -nsu -o
       volumes_from:
         - cids-server

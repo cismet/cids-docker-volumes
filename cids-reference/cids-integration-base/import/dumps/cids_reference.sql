@@ -210,7 +210,7 @@ SELECT pg_catalog.setval('sph_kategorie_seq', 10, true);
 INSERT INTO sph_spielhalle VALUES ('qQYSFhBtnfEv', 'Magic Spielhalle', 1, 1, 1, true, '2017-03-24', 1, '2016-03-24 15:09:03.989801', 1, 56, 1);
 INSERT INTO sph_spielhalle VALUES ('mZkQnrCTpJHB', 'Spiel-in Meyer', 1, 3, 2, false, '2018-03-24', 2, '2016-03-24 15:09:03.991593', 2, 45, 2);
 INSERT INTO sph_spielhalle VALUES ('vgakjnhXCMoD', 'Glücks-Karl', 2, 2, 2, true, '2019-03-24', 3, '2016-03-24 15:09:03.992102', 3, 10, 3);
-INSERT INTO sph_spielhalle VALUES ('wXcrPWpFZKei', 'Spielpalast', 3, 3, 2, false, '2016-03-24', 4 '2016-03-24 15:09:03.992411', 4, 12, 4);
+INSERT INTO sph_spielhalle VALUES ('wXcrPWpFZKei', 'Spielpalast', 3, 3, 2, false, '2016-03-24', 4, '2016-03-24 15:09:03.992411', 4, 12, 4);
 INSERT INTO sph_spielhalle VALUES ('cNKZxLpIMXTr', 'Happy Winner Nowotny', 3, 2, 1, false, '2026-03-24', 5, '2016-03-24 15:09:03.992788', 5, 2, 5);
 INSERT INTO sph_spielhalle VALUES ('LbYWmfzEdQHP', 'Joker House', 5, 1, 1, false, '2015-03-24', 6, '2016-03-24 15:09:03.993098', 6, 23, 6);
 INSERT INTO sph_spielhalle VALUES (NULL, 'Dark Room Lucky Punch', 6, 3, 1, true, '2012-03-24', 7, '2016-03-24 15:09:03.993409', 7, 54, 7);
@@ -339,19 +339,6 @@ SET escape_string_warning = off;
 SET row_security = off;
 
 SET search_path = public, pg_catalog;
-
---
--- Data for Name: cs_all_attr_mapping; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- Name: cs_all_attr_mapping_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('cs_all_attr_mapping_sequence', 1, false);
-
 
 --
 -- Data for Name: cs_attr; Type: TABLE DATA; Schema: public; Owner: postgres

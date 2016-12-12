@@ -6,26 +6,36 @@ services:
       ports:
         - "5434:5432"
       volumes:
-        - cids-integration-base:/data
+        - cids-integration-base:/cidsIntegrationBase/pg_data
         - ~/cids-docker-volumes/cids-reference/cids-integration-base/import/:/import/cidsIntegrationBase/
+      command: [start, import]
     cids-server:
       image: cismet/cids-server
       container_name: cidsreference_cids-server
       links:
         - "cids-integration-base:cids-integration-base"
+      depends_on: 
+        - cids-integration-base
       ports:
         - "9986:9986"
       environment:
-        LOG4J_HOST: 172.17.0.1
-        CIDS_ACCOUNT_EXTENSION: CidsReference
+        - LOG4J_HOST=172.17.0.4
+        - CIDS_ACCOUNT_EXTENSION=CidsReference
+        # Environment variables are no longer the recommended method for connecting to linked services. 
+        # Instead, you should use the link name (by default, the name of the linked service) as the hostname to connect to. See the docker-compose.yml documentation for details.
+        # Environment variables will only be populated if you’re using the legacy version 1 Compose file format.
+        - CIDS_INTEGRATION_BASE_PORT_5432_TCP_ADDR=cids-integration-base
+        - CIDS_INTEGRATION_BASE_PORT_5432_TCP_PORT=5432
       volumes:
-        - cids-server:/data
+        - cids-server:/cidsDistribution
         - ~/cids-docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
     cids-server-rest-legacy:
       image: cismet/cids-server-rest-legacy
       container_name: cidsreference_cids-cids-server-rest-legacy
       links:
         - "cids-server:cids-server"
+      depends_on: 
+        - cids-server
       ports:
         - "8890:8890"
       environment:
