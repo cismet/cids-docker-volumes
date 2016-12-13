@@ -11,6 +11,7 @@ cidsintegrationtests_server:
   environment:
     LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
+    CIDS_SERVER_START_OPTIONS: runtime.properties
   volumes:
     - cidsintegrationtests_server:/data
     - /home/pdihe/docker-volumes/cids-integrationtests/cids-server/import/:/import/cids-server/

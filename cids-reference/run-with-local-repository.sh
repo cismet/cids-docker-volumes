@@ -14,3 +14,5 @@ docker volume rm cidsreferencelocal_cids-integration-base
 docker volume rm cidsreferencelocal_cids-server
 
 docker-compose -f use-local-repository.yml --project-name cidsreferencelocal up -d
+
+docker-compose ps

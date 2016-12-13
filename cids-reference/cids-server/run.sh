@@ -9,6 +9,7 @@ docker run -d -p 9986:9986 \
     --name cidsreference_cids-server \
     -e CIDS_ACCOUNT_EXTENSION=CidsReference \
     -e LOG4J_HOST=172.17.0.3 \
+    -e CIDS_SERVER_START_OPTIONS=runtime.properties \
     -v cidsreference_cids-server:/cidsDistribution \
     -v ~/cids-docker-volumes/cids-reference/cids-server/import/:/import/cids-server/ \
     cismet/cids-server:latest

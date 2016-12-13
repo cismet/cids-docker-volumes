@@ -11,6 +11,7 @@ cidsintegrationtests_server:
   environment:
     LOG4J_HOST: 172.17.0.1
     CIDS_ACCOUNT_EXTENSION: CidsIntegrationtests
+    CIDS_SERVER_START_OPTIONS: runtime.properties
     MAVEN_LIB_DIR: /data/lib/m2-from-host/
     UPDATE_SNAPSHOTS: -nsu -o
   volumes:

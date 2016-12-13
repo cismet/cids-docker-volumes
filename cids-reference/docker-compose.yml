@@ -21,6 +21,7 @@ services:
       environment:
         - LOG4J_HOST=172.17.0.1
         - CIDS_ACCOUNT_EXTENSION=CidsReference
+        - CIDS_SERVER_START_OPTIONS=runtime.properties
         # Environment variables are no longer the recommended method for connecting to linked services. 
         # Instead, you should use the link name (by default, the name of the linked service) as the hostname to connect to. 
         # See the docker-compose.yml documentation for details.
@@ -31,7 +32,7 @@ services:
         - cids-server:/cidsDistribution
         - ~/cids-docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
     cids-server-rest-legacy:
-      image: cismet/cids-server-rest-legacy
+      image: cismet/cids-server-rest-legacy:latest
       container_name: cidsreference_cids-cids-server-rest-legacy
       links:
         - "cids-server:cids-server"
