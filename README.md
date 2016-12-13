@@ -1,2 +1,2 @@
-# docker-volumes
-custom volumes for [feeding docker-images](https://github.com/cismet/docker-images)
+# cids-docker-volumes
+Custom volumes for feeding **generic** [cids-docker-images](https://github.com/cismet/cids-docker-images)

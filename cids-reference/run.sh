@@ -13,4 +13,6 @@ docker rm -v -f cidsreference_cids-server-rest-legacy
 docker volume rm cidsreference_cids-integration-base
 docker volume rm cidsreference_cids-server
 
-docker-compose up -d
+docker-compose -p cidsreference up -d
+
+docker-compose ps
