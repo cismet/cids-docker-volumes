@@ -10,7 +10,7 @@ services:
         - ~/cids-docker-volumes/cids-reference/cids-integration-base/import/:/import/cidsIntegrationBase/
       command: [start, import]
     cids-server:
-      image: cismet/cids-server:1.2
+      image: cismet/cids-server:4.0
       container_name: cidsreference_cids-server
       links:
         - "cids-integration-base:cids-integration-base"
@@ -32,7 +32,7 @@ services:
         - cids-server:/cidsDistribution
         - ~/cids-docker-volumes/cids-reference/cids-server/import/:/import/cids-server/
     cids-server-rest-legacy:
-      image: cismet/cids-server-rest-legacy:1.2
+      image: cismet/cids-server-rest-legacy:4.0
       container_name: cidsreference_cids-cids-server-rest-legacy
       links:
         - "cids-server:cids-server"
