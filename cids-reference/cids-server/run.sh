@@ -12,4 +12,4 @@ docker run -d -p 9986:9986 \
     -e CIDS_SERVER_START_OPTIONS=runtime.properties \
     -v cidsreference_cids-server:/cidsDistribution \
     -v ~/cids-docker-volumes/cids-reference/cids-server/import/:/import/cids-server/ \
-    cismet/cids-server:latest
+    cismet/cids-server:1.2

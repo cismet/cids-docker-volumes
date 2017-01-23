@@ -1,11 +1,11 @@
 cidsintegrationtests_integrationbase:
-  image: cismet/cids-integration-base:latest
+  image: cismet/cids-integration-base:postgres-9.0.3-2.0
   volumes:
     - cidsintegrationtests_integrationbase:/data
     - /home/pdihe/docker-volumes/cids-integrationtests/cids-integration-base/import/:/import/cidsIntegrationBase/
   log_driver: "json-file"    
 cidsintegrationtests_server:
-  image: cismet/cids-server
+  image: cismet/cids-server:1.2
   links:
     - "cidsintegrationtests_integrationbase:cids-integration-base"
   environment:
@@ -20,7 +20,7 @@ cidsintegrationtests_server:
     - /home/pdihe/docker-volumes/cids-integrationtests/cids-server/import/:/import/cids-server/
   log_driver: "json-file"    
 cidsintegrationtests_server_rest:
-  image: cismet/cids-server-rest-legacy
+  image: cismet/cids-server-rest-legacy:1.2
   links:
     - "cidsintegrationtests_server:cids-server"
   environment:

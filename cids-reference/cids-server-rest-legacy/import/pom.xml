@@ -10,7 +10,7 @@
 
     <groupId>de.cismet.cids</groupId>
     <artifactId>cids-reference-cids-server-rest-legacy</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>4.0</version>
     <packaging>pom</packaging>
 
     <name>Cids Reference Legacy Rest Distribution</name>
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>de.cismet.cids</groupId>
             <artifactId>cids-server-rest-legacy</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>4.0</version>
         </dependency>        
     </dependencies>
 
@@ -29,7 +29,7 @@
             <plugin>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-maven-plugin</artifactId>
-                <version>2.1</version>
+                <version>4.0</version>
                 <executions>
                     <execution>
                         <goals>
