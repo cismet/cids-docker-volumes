@@ -5,7 +5,7 @@ cidsintegrationtests_integrationbase:
     - /home/pdihe/docker-volumes/cids-integrationtests/cids-integration-base/import/:/import/cidsIntegrationBase/
   log_driver: "json-file"    
 cidsintegrationtests_server:
-  image: cismet/cids-server:4.0
+  image: cismet/cids-server:latest-snapshot
   links:
     - "cidsintegrationtests_integrationbase:cids-integration-base"
   environment:
@@ -20,7 +20,7 @@ cidsintegrationtests_server:
     - /home/pdihe/docker-volumes/cids-integrationtests/cids-server/import/:/import/cids-server/
   log_driver: "json-file"    
 cidsintegrationtests_server_rest:
-  image: cismet/cids-server-rest-legacy:4.0
+  image: cismet/cids-server-rest-legacy:latest-snapshot
   links:
     - "cidsintegrationtests_server:cids-server"
   environment:
