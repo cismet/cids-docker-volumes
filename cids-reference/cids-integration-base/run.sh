@@ -12,7 +12,7 @@ docker run -it -p 5434:5432 \
     --name cidsreference_cids-integration-base \
     -v cidsreference_cids-integration-base:/cidsIntegrationBase/pg_data/ \
     -v ~/cids-docker-volumes/cids-reference/cids-integration-base/import/:/import/cidsIntegrationBase/ \
-    cismet/cids-integration-base:latest \
+    cismet/cids-integration-base:postgres-9.0.3-2.0 \
     start import
 
 #    -v ~/git_work/cids-docker-images/cids-integration-base/cidsIntegrationBase/utils:/cidsIntegrationBase/utils \
