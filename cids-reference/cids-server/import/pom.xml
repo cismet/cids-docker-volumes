@@ -4,23 +4,44 @@
 
     <parent>
         <groupId>de.cismet</groupId>
-        <artifactId>global-parent</artifactId>
-        <version>3.0.1</version>
+        <artifactId>cismet-parent</artifactId>
+        <version>5.0</version>
     </parent>
 
     <groupId>de.cismet.cids</groupId>
     <artifactId>cidsreference-cids-server</artifactId>
-    <version>4.0</version>
+    <version>5.0</version>
     <packaging>pom</packaging>
 
     <name>Cids-Server reference Distribution</name>
     <description>Generates a cids distribution</description>
+    
+    <properties>
+        <!--
+            Deactivate all plugins not directly required for building the autodistribution
+        -->
+        <jalopy.skip>true</jalopy.skip>
+        <maven.source.skip>true</maven.source.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <mdep.analyze.skip>true</mdep.analyze.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <maven.test.skip>true</maven.test.skip>
+        <maven.install.skip>true</maven.install.skip>
+        
+        <!--
+             Activate all plugins directly required for building the autodistribution
+        -->
+        <mdep.skip>false</mdep.skip>
+        <cids.generate-lib.skip>false</cids.generate-lib.skip>
+        <exex.skip>false</exex.skip>
+        <jarsigner.skip>false</jarsigner.skip>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>de.cismet.cids</groupId>
             <artifactId>cids-server</artifactId>
-            <version>4.0</version>
+            <version>5.0</version>
         </dependency>
     </dependencies>
 
@@ -29,7 +50,6 @@
             <plugin>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-maven-plugin</artifactId>
-                <version>4.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -40,16 +60,18 @@
                 <configuration>
                     <vendor>cismet</vendor>
                     <homepage>http://www.cismet.de</homepage>
-                    <codebase>http://</codebase>
-                    <m2codebase>__MAVEN_LIB_DIR__</m2codebase>
-                    <accountExtension>__CIDS_ACCOUNT_EXTENSION__</accountExtension>
-                    <outputDirectory>__DATA_DIR__</outputDirectory>
+                    <m2codebase>${env.MAVEN_LIB_DIR}</m2codebase>
+                    <accountExtension>${env.CIDS_ACCOUNT_EXTENSION}</accountExtension>
+                    <outputDirectory>${env.DATA_DIR}</outputDirectory>
+                    <sign>false</sign>
+                    <checkSignature>false></checkSignature>
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>de.cismet.cids</groupId>
                             <artifactId>cids-server</artifactId>
                             <generateJnlp>false</generateJnlp>
                             <starterConfiguration>
+                                <starterAlias>${env.CIDS_SERVER_STARTER}</starterAlias>
                                 <localConfiguration>
                                     <jarNames>
                                         <jarName>res.jar</jarName>
