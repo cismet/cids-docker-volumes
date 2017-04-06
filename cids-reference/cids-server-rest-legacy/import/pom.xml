@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>de.cismet</groupId>
-        <artifactId>cismet-parent</artifactId>
-        <version>5.0</version>
+        <groupId>de.cismet.cids</groupId>
+        <artifactId>cids-distribution-parent</artifactId>
+        <version>5.2.3</version>
     </parent>
 
     <groupId>de.cismet.cids</groupId>
@@ -13,30 +13,9 @@
     <version>5.0</version>
     <packaging>pom</packaging>
 
-    <name>Cids Reference Legacy Rest Distribution</name>
+    <name>cids-reference-cids-server-rest-legacy</name>
     <description>Generates a Legacy Rest distribution</description>
     
-    <properties>
-        <!--
-            Deactivate all plugins not directly required for building the autodistribution
-        -->
-        <jalopy.skip>true</jalopy.skip>
-        <maven.source.skip>true</maven.source.skip>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-        <mdep.analyze.skip>true</mdep.analyze.skip>
-        <enforcer.skip>true</enforcer.skip>
-        <maven.test.skip>true</maven.test.skip>
-        <maven.install.skip>true</maven.install.skip>
-        
-        <!--
-             Activate all plugins directly required for building the autodistribution
-        -->
-        <mdep.skip>false</mdep.skip>
-        <cids.generate-lib.skip>false</cids.generate-lib.skip>
-        <exex.skip>false</exex.skip>
-        <jarsigner.skip>false</jarsigner.skip>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>de.cismet.cids</groupId>
@@ -63,12 +42,16 @@
                     <m2codebase>${env.MAVEN_LIB_DIR}</m2codebase>
                     <accountExtension>${env.CIDS_ACCOUNT_EXTENSION}</accountExtension>
                     <outputDirectory>${env.DATA_DIR}</outputDirectory>
+                    <classpathFromMavenRepo>true</classpathFromMavenRepo>
                     <sign>false</sign>
                     <checkSignature>false></checkSignature>
+                    <failOnError>true</failOnError>
+                    <verbose>false</verbose>
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>de.cismet.cids</groupId>
                             <artifactId>cids-server-rest-legacy</artifactId>
+                            <generateJar>true</generateJar>
                             <generateJnlp>false</generateJnlp>
                             <starterConfiguration>
                                 <starterAlias>${env.CIDS_SERVER_REST_LEGACY_STARTER}</starterAlias>

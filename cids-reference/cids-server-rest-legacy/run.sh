@@ -3,7 +3,7 @@
 docker stop cidsreference_cids-server-rest-legacy
 
 docker rm -f cidsreference_cids-server-rest-legacy
-docker run -d -p 8890:8890 \
+docker run -it -p 8890:8890 \
     --link cidsreference_cids-server:cids-server \
     --name cidsreference_cids-server-rest-legacy \
     -e CIDS_ACCOUNT_EXTENSION=CidsReference \

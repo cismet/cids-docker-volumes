@@ -4,7 +4,7 @@ docker stop cidsreference_cids-server
 
 docker rm -v -f cidsreference_cids-server
 docker volume rm cidsreference_cids-server
-docker run -d -p 9986:9986 \
+docker run -it -p 9986:9986 \
     --link cidsreference_cids-integration-base:cids-integration-base \
     --name cidsreference_cids-server \
     -e CIDS_ACCOUNT_EXTENSION=CidsReference \
