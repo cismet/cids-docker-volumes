@@ -3,24 +3,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>de.cismet</groupId>
-        <artifactId>global-parent</artifactId>
-        <version>3.0.1</version>
+        <groupId>de.cismet.cids</groupId>
+        <artifactId>cids-distribution-parent</artifactId>
+        <version>5.2.3</version>
     </parent>
 
     <groupId>de.cismet.cids</groupId>
     <artifactId>cids-reference-cids-server-rest-legacy</artifactId>
-    <version>4.0</version>
+    <version>5.0</version>
     <packaging>pom</packaging>
 
-    <name>Cids Reference Legacy Rest Distribution</name>
+    <name>cids-reference-cids-server-rest-legacy</name>
     <description>Generates a Legacy Rest distribution</description>
-
+    
     <dependencies>
         <dependency>
             <groupId>de.cismet.cids</groupId>
             <artifactId>cids-server-rest-legacy</artifactId>
-            <version>4.0</version>
+            <version>5.0</version>
         </dependency>        
     </dependencies>
 
@@ -29,7 +29,6 @@
             <plugin>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-maven-plugin</artifactId>
-                <version>4.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -37,19 +36,25 @@
                         </goals>
                     </execution>
                 </executions>
-		<configuration>
+                <configuration>
                     <vendor>cismet</vendor>
                     <homepage>http://www.cismet.de</homepage>
-                    <codebase>http://</codebase>
-                    <m2codebase>__MAVEN_LIB_DIR__</m2codebase>
-                    <accountExtension>__CIDS_ACCOUNT_EXTENSION__</accountExtension>
-                    <outputDirectory>__DATA_DIR__</outputDirectory>
+                    <m2codebase>${env.MAVEN_LIB_DIR}</m2codebase>
+                    <accountExtension>${env.CIDS_ACCOUNT_EXTENSION}</accountExtension>
+                    <outputDirectory>${env.DATA_DIR}</outputDirectory>
+                    <classpathFromMavenRepo>true</classpathFromMavenRepo>
+                    <sign>false</sign>
+                    <checkSignature>false></checkSignature>
+                    <failOnError>true</failOnError>
+                    <verbose>false</verbose>
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>de.cismet.cids</groupId>
                             <artifactId>cids-server-rest-legacy</artifactId>
+                            <generateJar>true</generateJar>
                             <generateJnlp>false</generateJnlp>
                             <starterConfiguration>
+                                <starterAlias>${env.CIDS_SERVER_REST_LEGACY_STARTER}</starterAlias>
                                 <mainClass>de.cismet.cidsx.server.Starter</mainClass>
                             </starterConfiguration>
                         </dependencyEx>

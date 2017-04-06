@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>rebuild</actionName>
+        <packagings>
+            <packaging>*</packaging>
+        </packagings>
+        <goals>
+            <goal>clean</goal>
+            <goal>install</goal>
+        </goals>
+        <properties>
+            <Env.CIDS_ACCOUNT_EXTENSION>Switchon</Env.CIDS_ACCOUNT_EXTENSION>
+            <Env.CIDS_SERVER_STARTER>cids-server-rest-legacy</Env.CIDS_SERVER_STARTER>
+            <Env.DATA_DIR>${project.basedir}/target/cidsDistribution</Env.DATA_DIR>
+            <Env.MAVEN_LIB_DIR>${project.basedir}/target/cidsDistribution/lib/m2</Env.MAVEN_LIB_DIR>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>cids-distribution</activatedProfile>
+        </activatedProfiles>
+    </action>
+    <action>
+        <actionName>build</actionName>
+        <packagings>
+            <packaging>*</packaging>
+        </packagings>
+        <goals>
+            <goal>install</goal>
+        </goals>
+        <properties>
+            <Env.CIDS_ACCOUNT_EXTENSION>Switchon</Env.CIDS_ACCOUNT_EXTENSION>
+            <Env.CIDS_SERVER_STARTER>cids-server-rest-legacy</Env.CIDS_SERVER_STARTER>
+            <Env.DATA_DIR>${project.basedir}/target/cidsDistribution</Env.DATA_DIR>
+            <Env.MAVEN_LIB_DIR>${project.basedir}/target/cidsDistribution/lib/m2</Env.MAVEN_LIB_DIR>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>cids-distribution</activatedProfile>
+        </activatedProfiles>
+    </action>
+</actions>
