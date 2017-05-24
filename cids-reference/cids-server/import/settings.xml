@@ -7,58 +7,35 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-        </profile>
-        <profile>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <id>dev</id>
             <repositories>
-                <repository>
-                    <id>eig-cismet-repo</id>
-                    <url>https://repo.cismet.de/repo</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
                 <repository>
                     <id>cismet-repo</id>
                     <url>https://repo.cismet.de/repo</url>
                     <releases>
                         <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                        <updatePolicy>always</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-                <repository>
-                    <id>cismet-dev</id>
-                    <url>https://repo.cismet.de/repo</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
+                        <checksumPolicy>warn</checksumPolicy>
+                        <updatePolicy>always</updatePolicy>
                     </snapshots>
                 </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>eig-cismet-repo</id>
-                    <url>https://repo.cismet.de/repo</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
+                    <id>cismet-private-repo</id>
+                    <name>plugins-releases-local</name>
+                    <url>https://repo.cismet.de/plugins-releases-local</url>
                 </pluginRepository>
             </pluginRepositories>
         </profile>
     </profiles>
+    <activeProfiles>
+        <activeProfile>global-properties</activeProfile>
+        <activeProfile>cismet-inhouse-dev</activeProfile>
+    </activeProfiles>
     <mirrors>
         <mirror>
             <id>central-proxy</id>
